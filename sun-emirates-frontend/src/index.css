@@ -1,0 +1,1162 @@
+/* Sun Emirates - Main Styles */
+/* Originally from SunEmirates.css */
+
+/*---------------------- Body Styles  ---------------------------*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-weight: normal;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  background-image: url('./images/Common/bgBody.png');
+  background-color: #bf4c17;
+  background-repeat: repeat;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a img {
+  border: 0px;
+}
+
+a:focus {
+  outline: none !important;
+}
+
+#SE-Container {
+  width: 992px;
+  margin: 0 auto;
+  position: relative;
+  background-color: #fff;
+}
+
+#frmCombian,
+#frmCenterPane {
+  display: table-row;
+  width: 1000px;
+}
+
+#frmLeftPane,
+#frmRightPane {
+  display: none;
+}
+
+#frmCenterPane {
+  overflow: hidden;
+  width: 992px !important;
+  display: table-cell;
+}
+
+/*-------------------------- Header Styles ---------------------------*/
+.headertopbg {
+  overflow: hidden;
+  width: 1000px;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  background-image: url('./images/Common/HeaderTopBg.png');
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+#header-Container {
+  width: 992px;
+  height: 110px;
+  background-image: url('./images/Common/HeaderBottomBg.png');
+  background-position: left center;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+}
+
+.header-Container-wrapper {
+  width: 992px;
+  margin: 0 auto;
+}
+
+.header-LeftPane {
+  float: left;
+  position: relative;
+  width: 45%;
+  height: auto;
+  position: relative;
+}
+
+.logo-container {
+  width: 105px;
+  height: 97px;
+  float: left;
+  margin-left: 10px;
+}
+
+.logo-container img {
+  width: 100%;
+  height: auto;
+}
+
+.header-RightPane {
+  float: right;
+  position: relative;
+  width: 50%;
+  height: 110px;
+}
+
+.contactInfo {
+  color: Black;
+  text-align: right;
+  text-decoration: none;
+  margin-right: 10px;
+  padding: 10px 5px 3px 3px;
+}
+
+.comTitle {
+  font-size: 12px;
+  text-transform: uppercase;
+  width: 100%;
+  letter-spacing: 1px;
+  line-height: 15px;
+}
+
+.comAddress {
+  font-size: 8pt;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  line-height: 15px;
+}
+
+.comContacts {
+  font-size: 8pt;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  line-height: 15px;
+}
+
+.comTelphone {
+  display: inline-block;
+  width: 10px;
+  height: 11px;
+  background-image: url('./images/Common/phoneicon.png');
+  background-repeat: no-repeat;
+  background-position: top left;
+}
+
+.comFax {
+  display: inline-block;
+  width: 13px;
+  height: 11px;
+  background-image: url('./images/Common/printer.png');
+  background-repeat: no-repeat;
+  background-position: top left;
+}
+
+.comMobile {
+  display: inline-block;
+  width: 7px;
+  height: 11px;
+  background-image: url('./images/Common/mobileicon.png');
+  background-repeat: no-repeat;
+  background-position: top left;
+}
+
+.comEmails {
+  font-size: 8pt;
+  font-family: Arial, sans-serif;
+}
+
+.comEmails a {
+  color: black;
+  font-size: 8pt;
+  font-family: Arial, sans-serif;
+  text-decoration: none;
+}
+
+.comEmails a:hover {
+  font-size: 8pt;
+  font-family: Arial, sans-serif;
+  text-decoration: underline;
+}
+
+.Icon-EMail {
+  display: inline-block;
+  width: 10px;
+  height: 11px;
+  background-image: url('./images/Common/emailicon.png');
+  background-repeat: no-repeat;
+  background-position: top left;
+}
+
+.HP_Divider {
+  background-color: #c24c15;
+  height: 4px;
+  width: 100%;
+}
+
+.pipeSeparator {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+/*-------------------------- Menu Styles ---------------------------*/
+#SETopNavigation {
+  margin-top: 16px;
+}
+
+.menuTopNav {
+  width: 100%;
+}
+
+.menuTopNav a {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  color: #342a67;
+  padding: 0px 5px;
+  text-decoration: none;
+}
+
+.menuTopNav a:hover {
+  color: #ef3826;
+}
+
+/*-------------------------- Banner Styles ---------------------------*/
+
+.SliderShowView{
+width:100%;
+display:flex;
+justify-content:center;
+}
+
+/* banner container */
+
+.slideshow{
+position:relative;
+width:992px;
+height:260px;
+overflow:hidden;
+}
+
+/* banner images */
+
+.slideshow img{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:260px;
+object-fit:cover;
+opacity:0;
+}
+
+/* banner animation */
+
+.banner1{
+animation:banner1 6s infinite;
+}
+
+.banner2{
+animation:banner2 6s infinite;
+}
+
+.banner3{
+animation:banner3 6s infinite;
+}
+
+/* animation keyframes */
+
+@keyframes banner1{
+0%{opacity:1;}
+30%{opacity:1;}
+33%{opacity:0;}
+100%{opacity:0;}
+}
+
+@keyframes banner2{
+0%{opacity:0;}
+30%{opacity:0;}
+33%{opacity:1;}
+63%{opacity:1;}
+66%{opacity:0;}
+100%{opacity:0;}
+}
+
+@keyframes banner3{
+0%{opacity:0;}
+63%{opacity:0;}
+66%{opacity:1;}
+96%{opacity:1;}
+100%{opacity:0;}
+}
+/*-------------------------- Footer Styles ---------------------------*/
+.footerCont {
+  width: 992px;
+  height: 29px;
+  background-image: url('./images/Common/FooterTopBg.png');
+  background-position: left center;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.footercoprigt {
+  padding: 10px 0 0 10px;
+  float: left;
+  color: #7b797a;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+}
+
+.footermenu {
+  padding: 10px 10px 0px 0px;
+  float: right;
+}
+
+.footermenu a {
+  color: #cb490c;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0 5px;
+}
+
+.footermenu a:hover {
+  text-decoration: underline;
+}
+
+.Footerbottombg {
+  clear: both;
+  width: 1000px;
+  height: 49px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  background-image: url('./images/Common/FooterBottomBg.png');
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+
+/*------------------------- Bread Crumb Styles ------------------------*/
+.breadcrumb {
+  width: 100%;
+  height: 20px;
+  background-color: #fff;
+  padding: 5px 0 0 5px;
+  border-bottom: 1px dotted #c24c15;
+}
+
+.breadcrumb div {
+  float: left;
+  padding-left: 4px;
+  padding-right: 4px;
+  letter-spacing: 1px;
+}
+
+.breadcrumb div a {
+  text-decoration: none;
+  color: #000;
+}
+
+.breadcrumb div a:hover {
+  text-decoration: underline;
+}
+
+.bcRootNode {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+}
+
+.bcSeparator {
+  padding: 4px 0 0 0;
+}
+
+.bcCurrentNode {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  color: #322961;
+}
+
+/*------------------------- Forms Controls Style ----------------------*/
+.txtSLMedium {
+  width: 250px;
+}
+
+.txtMLMedium {
+  height: 60px;
+  width: 250px;
+}
+
+.frmLabel {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 11px;
+  color: #322961;
+  text-align: right;
+  padding-right: 20px;
+  vertical-align: top;
+  line-height: 15px;
+}
+
+.mandatory {
+  color: Red;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+}
+
+.ValidatorMsg {
+  color: Red;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+}
+
+.btnSubmit {
+  padding: 5px 15px;
+  background-color: #342a67;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.btnReset {
+  padding: 5px 15px;
+  background-color: #777;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.spearator {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+/*------------------------- Home Styles ----------------------------*/
+.innerRightPane {
+  width: auto;
+  margin: 0px;
+  float: right;
+  height: auto;
+}
+
+.innerLeftPane {
+  width: auto;
+  margin: 0px;
+  float: left;
+  height: auto;
+}
+
+/*------------------------- Contact Us Styles ----------------------------*/
+.ContUsContainer {
+  margin: 3px;
+  float: left;
+  width: 100%;
+}
+
+.ContUsLabel {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  text-align: right;
+  color: #555555;
+  padding: 5px;
+}
+
+.ContUsCompanyName {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  text-align: left;
+  padding-left: 10px;
+  color: #555555;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.ContUsAddress,
+.ContUsTelNo,
+.ContUsFaxNo,
+.ContUsMobileNo {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  text-align: left;
+  padding-left: 10px;
+  color: #555555;
+}
+
+.ContUsEMailId {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  text-align: left;
+  padding-left: 10px;
+  color: #555555;
+}
+
+.ContUsEMailId a {
+  color: #555555;
+}
+
+.ContUsEMailId a:hover {
+  color: #555555;
+}
+
+/*--------------------------- Contents Styles -------------------------------*/
+.ContentsView {
+  background-color: #fff;
+  padding: 3px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  text-align: left;
+}
+
+.abtContentsView {
+  background-color: #fff;
+  padding: 3px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  text-align: center;
+}
+
+.pspan {
+  padding: 20px 10px 15px 10px;
+  margin: 0px;
+  font-family: Arial, sans-serif;
+  font-size: 11pt;
+  font-weight: bold;
+  color: #242525;
+}
+
+.pspan1 {
+  padding: 35px 10px 0px 10px;
+  margin: 0px;
+  font-family: Arial, sans-serif;
+  font-size: 11pt;
+  font-weight: bold;
+  color: #242525;
+}
+
+.parp {
+  margin: 0;
+  padding: 5px 0 10px 10px;
+  line-height: 1.7em;
+  font-family: Calibri, sans-serif;
+  font-size: 9pt;
+  color: #545454;
+  text-align: justify;
+}
+
+.abtparp {
+  width: 90%;
+  margin: 0;
+  padding: 5px 0 10px 45px;
+  line-height: 1.7em;
+  font-family: Calibri, sans-serif;
+  font-size: 9pt;
+  color: #545454;
+  text-align: justify;
+}
+
+.abtparp a {
+  color: blue !important;
+}
+
+.pageContainer,
+.Clientstable,
+.Equipmentstable,
+.FeedbackFormdiv {
+  width: 992px;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.pgeCntWrapper,
+.contarea {
+  width: 100%;
+  overflow: hidden;
+  background-color: #fff;
+  min-height: 385px;
+}
+
+.PageHeader {
+  font-family: 'Segoe UI Light', Arial, sans-serif;
+  font-size: 30px;
+  text-align: left;
+  float: left;
+  padding: 15px 0 20px 15px;
+  color: #9c9c9c;
+  width: 98%;
+}
+
+.osa {
+  text-align: left;
+}
+
+.osa li {
+  padding: 5px 0;
+  list-style-position: inside;
+}
+
+.osa li a {
+  line-height: 1.7em;
+  font-family: Calibri, sans-serif;
+  font-size: 9pt;
+  color: #342a67;
+  text-decoration: none;
+}
+
+.osa li a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.ClientGridView {
+  text-align: left;
+  width: 90%;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  margin-left: 40px;
+  border: 1px solid #eeeeee;
+}
+
+.ClientGridView th {
+  padding: 7px 0 7px 20px;
+  background-color: #777777;
+  color: #fff;
+  font-size: 13px;
+}
+
+.ClientGridView tr {
+  background-color: #fafbfc;
+}
+
+.ClientGridView td {
+  padding: 5px 0 5px 20px;
+  border-bottom: 1px solid #fff;
+  color: #322961;
+}
+
+.ClientGridView tr:hover {
+  background-color: #e5ecf3;
+}
+
+.tablestr {
+  text-align: left;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  width: 100%;
+}
+
+.tablestr th {
+  padding: 4px 0 4px 20px;
+  background-color: #cdcdcd;
+  color: #000;
+  font-size: 13px;
+}
+
+.tablestr tr {
+  background-color: #fafbfc;
+}
+
+.tablestr td {
+  padding: 5px 0 5px 20px;
+  border-bottom: 1px solid #fff;
+  color: #322961;
+}
+
+.tablestr tr:hover {
+  background-color: #e5ecf3;
+}
+
+.sitemapdiv {
+  margin: 0 0 0 25px;
+}
+
+.sitemapdiv li {
+  padding: 5px 0;
+}
+
+.sitemapdiv ul a {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  color: #ef3826;
+  text-decoration: none;
+}
+
+.sitemapdiv ul ul a {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  color: #342a67;
+  text-decoration: none;
+}
+
+.sitemapdiv ul a:hover,
+.sitemapdiv ul ul a:hover {
+  text-decoration: underline;
+}
+
+.servicetd {
+  padding: 0 0 0 50px;
+}
+
+.titldv {
+  font-family: Arial, sans-serif;
+  font-size: 11pt;
+  font-weight: bold;
+  color: #242525;
+}
+
+.desdv {
+  font-family: Calibri, sans-serif;
+  font-size: 9pt;
+  color: #342a67;
+  text-decoration: none;
+}
+
+.desdv li {
+  padding: 5px 0;
+}
+
+.divService {
+  font-family: Calibri, sans-serif;
+  font-size: 9pt;
+  color: #342a67;
+  text-decoration: none;
+}
+
+.divService li {
+  padding: 5px 0;
+}
+
+.accordinAbtUs {
+  width: 60%;
+  margin: 0px;
+  padding: 0px;
+  border: 1px solid #eeeeee;
+  overflow: hidden !important;
+}
+
+.accordinAbtUs1 {
+  width: 90%;
+  margin: 0px;
+  padding: 0px;
+  border: 1px solid #eeeeee;
+  overflow: hidden !important;
+}
+
+.accordinAbtUs div,
+.accordinAbtUs1 div {
+  background-color: #fafbfc;
+  overflow: hidden !important;
+}
+
+.accordinAbtUs div,
+.accordinAbtUs1 div,
+.accordinAbtUs h3,
+.accordinAbtUs1 h3 {
+  margin: 0px;
+  padding: 0px;
+}
+
+.accordinAbtUs h3,
+.accordinAbtUs1 h3 {
+  padding: 7px 0 7px 20px;
+  background-color: #777777;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+  font-size: 13px;
+  text-align: left;
+}
+
+.accordinAbtUs h3 a,
+.accordinAbtUs1 h3 a {
+  color: #fff;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.accordinAbtUs h3:hover,
+.accordinAbtUs1 h3:hover {
+  cursor: pointer;
+  background-color: #342a67;
+}
+
+.accordinAbtUs1 div p {
+  line-height: 1.7em;
+  font-family: Calibri, sans-serif;
+  font-size: 9pt;
+  color: #545454;
+  text-align: justify;
+  padding: 10px;
+}
+
+/*--------------------------- Products Styles -----------------------------*/
+.proHeader {
+  width: 100%;
+  padding: 5px;
+}
+
+.proHeader p {
+  margin: 0;
+  padding: 5px 0 0 10px;
+  line-height: 1.7em;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  text-align: left;
+}
+
+.proContainer {
+  width: 100%;
+}
+
+.proContainer div {
+  margin: 0 auto;
+}
+
+.proLeftPane {
+  width: 70%;
+  float: left;
+  height: auto;
+}
+
+.proRightPane {
+  width: 30%;
+  float: left;
+  height: auto;
+}
+
+.proHeaderSection {
+  width: 100%;
+  min-height: 35px;
+  padding-left: 18px;
+}
+
+.seLoctionMap {
+  margin: auto;
+  padding: auto;
+  vertical-align: top;
+  text-align: left;
+  margin: 0 0 0 0;
+}
+
+#proSSGallery {
+  width: 95%;
+  height: 350px;
+  overflow: auto;
+}
+
+/*--------------------------- Clients Panel Styles -----------------------------*/
+.clientplan {
+  background-image: url('./images/Clients/ourclientsbg.png');
+  background-position: left top;
+  background-repeat: repeat-x;
+}
+
+.image_carousel {
+  position: relative;
+  width: 992px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.image_carousel img {
+  display: block;
+  float: left;
+  padding: 0px;
+  margin: 0px;
+}
+
+/*------------------------- Error Message Styles -------------------------------*/
+.errorContainer {
+  width: 100%;
+  float: left;
+  height: auto;
+  text-align: left !important;
+  margin: 10px 0;
+}
+
+.Info32 {
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  padding-bottom: 10px;
+  margin: 5px 0px;
+  padding-left: 50px;
+  padding-right: 10px;
+  background-repeat: no-repeat;
+  font-family: Arial, Helvetica, sans-serif;
+  background-position: 10px center;
+  font-size: 11px;
+  border-top: 1px solid;
+  font-weight: bold;
+  border-right: 1px solid;
+  padding-top: 10px;
+  background-image: url('./images/ErrIcons/info32.png');
+  background-color: #bde5f8;
+  color: #00529b;
+}
+
+.Success32 {
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  padding-bottom: 10px;
+  margin: 5px 0px;
+  padding-left: 50px;
+  padding-right: 10px;
+  background-repeat: no-repeat;
+  font-family: Arial, Helvetica, sans-serif;
+  background-position: 10px center;
+  font-size: 11px;
+  border-top: 1px solid;
+  font-weight: bold;
+  border-right: 1px solid;
+  padding-top: 10px;
+  background-image: url('./images/ErrIcons/success32.png');
+  background-color: #dff2bf;
+  color: #4f8a10;
+}
+
+.Error32 {
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  padding-bottom: 10px;
+  margin: 5px 0px;
+  padding-left: 50px;
+  padding-right: 10px;
+  background-repeat: no-repeat;
+  font-family: Arial, Helvetica, sans-serif;
+  background-position: 10px center;
+  font-size: 11px;
+  border-top: 1px solid;
+  font-weight: bold;
+  border-right: 1px solid;
+  padding-top: 10px;
+  background-image: url('./images/ErrIcons/error32.png');
+  background-color: #ffbaba;
+  color: #d8000c;
+}
+
+.Validation32 {
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  padding-bottom: 10px;
+  margin: 5px 0px;
+  padding-left: 50px;
+  padding-right: 10px;
+  background-repeat: no-repeat;
+  font-family: Arial, Helvetica, sans-serif;
+  background-position: 10px center;
+  font-size: 11px;
+  border-top: 1px solid;
+  font-weight: bold;
+  border-right: 1px solid;
+  padding-top: 10px;
+  background-image: url('./images/ErrIcons/Validation32.png');
+  background-color: #ffccba;
+  color: #d63301;
+}
+
+/*--------------------------- Page Layout Styles -------------------------------*/
+.pageCntsContainer {
+  width: 100%;
+}
+
+.content-area {
+  width: 992px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.content-left {
+  width: 70%;
+  float: left;
+  padding: 10px;
+}
+
+.content-right {
+  width: 30%;
+  float: left;
+  padding: 10px;
+}
+
+/*--------------------------- Form Input Styles -------------------------------*/
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: #342a67;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/*--------------------------- Utility Classes -------------------------------*/
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.p-10 {
+  padding: 10px;
+}
+
+/*--------------------------- Clients Panel Styles -----------------------------*/
+
+.clientplan {
+  background-image: url('./images/Clients/ourclientsbg.png');
+  background-position: left top;
+  background-repeat: repeat-x;
+}
+
+.image_carousel {
+  position: relative;
+  width: 992px;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+
+.client-scroll {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  animation: scrollClients 35s linear infinite;
+}
+
+.client-scroll img {
+  height: 90px;
+  width: auto;
+  background: #ffffff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  box-shadow: 0px 3px 8px rgba(0,0,0,0.2);
+}
+
+/* smooth infinite scroll */
+
+@keyframes scrollClients {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.chatIcon{
+position:fixed;
+bottom:20px;
+right:20px;
+cursor:pointer;
+z-index:1000;
+}
+
+.chatIcon img{
+width:60px;
+height:60px;
+border-radius:50%;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+
+.chatContainer{
+position:fixed;
+bottom:90px;
+right:20px;
+width:320px;
+background:#fff;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.3);
+display:flex;
+flex-direction:column;
+overflow:hidden;
+z-index:1000;
+}
+
+.chatHeader{
+background:#342a67;
+color:#fff;
+padding:10px;
+font-weight:bold;
+}
+
+.chatBody{
+height:300px;
+overflow-y:auto;
+display:flex;
+flex-direction:column;
+padding:10px;
+gap:8px;
+}
+
+.botMessage{
+background:#eee;
+color:#000;
+padding:8px 10px;
+border-radius:8px;
+max-width:75%;
+align-self:flex-start;
+}
+
+.userMessage{
+background:#342a67;
+color:#fff;
+padding:8px 10px;
+border-radius:8px;
+max-width:75%;
+align-self:flex-end;
+}
+
+.inputArea{
+display:flex;
+border-top:1px solid #ccc;
+}
+
+.chatInput{
+flex:1;
+padding:8px;
+border:none;
+outline:none;
+}
+
+.chatButton{
+background:#342a67;
+color:#fff;
+border:none;
+padding:8px 12px;
+cursor:pointer;
+}
