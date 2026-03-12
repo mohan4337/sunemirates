@@ -1,118 +1,201 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Equipments = () => {
-  const equipmentCategories = [
+  const [viewMode, setViewMode] = useState('table');
+
+  const equipmentData = [
     {
-      title: 'Machining Equipment',
+      category: "Machining Equipment",
       items: [
-        'Lathe Machine - 02 Nos',
-        'Radial Drilling Machine - 02 Nos',
-        'Pillar Drilling Machine - 02 Nos',
-        'Shaping Machine - 01 No',
-        'Milling Machine - 01 No',
-        'Grinding Machine - 01 No'
+        { name: "Lathe Machine", model: "Industrial Series", capacity: "12' x 24'", description: "Precision turning operations" },
+        { name: "Radial Drilling Machine", model: "RD-1200", capacity: "50mm", description: "Heavy duty drilling" },
+        { name: "Pillar Drilling Machine", model: "PD-350", capacity: "35mm", description: "Precision drilling" },
+        { name: "Shaping Machine", model: "SH-500", capacity: "500mm stroke", description: "Metal shaping" },
+        { name: "Milling Machine", model: "VF-2", capacity: "3-Axis", description: "CNC milling capability" },
+        { name: "Grinding Machine", model: "GS-250", capacity: "250mm", description: "Surface grinding" }
       ]
     },
     {
-      title: 'Shearing & Bending',
+      category: "Shearing & Bending",
       items: [
-        'Hydraulic Shearing Machine - 01 No (10mm x 2500mm)',
-        'Hydraulic Press Brake - 01 No (20mm x 3200mm)',
-        'Hand Shearing Machine - 02 Nos',
-        'Hand Bending Machine - 02 Nos',
-        'Pipe Bending Machine - 02 Nos (2" to 8")',
-        'Profile Bending Machine - 01 No'
+        { name: "Hydraulic Shearing Machine", model: "HS-1025", capacity: "10mm x 2500mm", description: "Precision sheet cutting" },
+        { name: "Hydraulic Press Brake", model: "HPB-2032", capacity: "20mm x 3200mm", description: "Precision bending" },
+        { name: "Hand Shearing Machine", model: "HSS-6", capacity: "6mm", description: "Manual sheet cutting" },
+        { name: "Hand Bending Machine", model: "HBM-4", capacity: "4mm", description: "Manual bending" },
+        { name: "Pipe Bending Machine", model: "PBM-8", capacity: "2\" to 8\"", description: "Pipe bending" },
+        { name: "Profile Bending Machine", model: "PRB-150", capacity: "150mm", description: "Profile rolling" }
       ]
     },
     {
-      title: 'Cutting & Grinding',
+      category: "Cutting & Grinding",
       items: [
-        'Gas Cutting - 04 Nos',
-        'Arc Air Gouging - 02 Nos',
-        'Portable Grinding Machine - 10 Nos',
-        'Bench Grinding Machine - 04 Nos',
-        'Cut-off Machine - 02 Nos'
+        { name: "Gas Cutting Equipment", model: "GC-200", capacity: "200mm thickness", description: "Oxy-fuel cutting" },
+        { name: "Arc Air Gouging", model: "AAG-100", capacity: "100A", description: "Air carbon arc gouging" },
+        { name: "Portable Grinding Machine", model: "PGM-180", capacity: "180mm disc", description: "Angle grinder" },
+        { name: "Bench Grinding Machine", model: "BGM-300", capacity: "300mm wheel", description: "Stationary grinding" },
+        { name: "Cut-off Machine", model: "COM-14", capacity: "14\" wheel", description: " abrasive cutting" }
       ]
     },
     {
-      title: 'Welding Equipment',
+      category: "Welding Equipment",
       items: [
-        'MIG Welding Machine - 08 Nos',
-        'ARC Welding Machine - 10 Nos',
-        'TIG Welding Machine - 04 Nos',
-        'Welding Rectifier - 04 Nos',
-        'Submerged Arc Welding - 01 No'
+        { name: "MIG Welding Machine", model: "MIG-350", capacity: "350A", description: "Gas metal arc welding" },
+        { name: "ARC Welding Machine", model: "ARC-400", capacity: "400A", description: "Shielded metal arc welding" },
+        { name: "TIG Welding Machine", model: "TIG-300", capacity: "300A", description: "Gas tungsten arc welding" },
+        { name: "Welding Rectifier", model: "WR-500", capacity: "500A", description: "DC welding power source" },
+        { name: "Submerged Arc Welding", model: "SAW-1000", capacity: "1000A", description: "Automatic welding" }
       ]
     },
     {
-      title: 'Surface Treatment',
+      category: "Surface Treatment",
       items: [
-        'Sand Blasting Machine - 01 No',
-        'Shot Blasting Machine - 01 No',
-        'Paint Booth - 01 No',
-        'Air Compressor - 03 Nos (15HP, 10HP, 5HP)'
+        { name: "Sand Blasting Machine", model: "SBM-2460", capacity: "2400 x 600mm", description: "Abrasive blasting" },
+        { name: "Shot Blasting Machine", model: "SBT-2015", capacity: "2000 x 1500mm", description: "Shot/peening" },
+        { name: "Paint Booth", model: "PB-8000", capacity: "8000 CFM", description: "Spray painting" },
+        { name: "Air Compressor", model: "AC-15HP", capacity: "15HP", description: "Industrial compressed air" },
+        { name: "Air Compressor", model: "AC-10HP", capacity: "10HP", description: "Secondary compression" }
       ]
     },
     {
-      title: 'Material Handling',
+      category: "Material Handling",
       items: [
-        'EOT Crane - 02 Nos (10 Ton)',
-        'Forklift - 02 Nos',
-        'Mobile Crane - 01 No',
-        'Trolley - 05 Nos'
+        { name: "EOT Crane", model: "EOT-10T", capacity: "10 Ton", description: "Overhead crane" },
+        { name: "EOT Crane", model: "EOT-10T", capacity: "10 Ton", description: "Secondary crane" },
+        { name: "Forklift", model: "FL-5T", capacity: "5 Ton", description: "Material handling" },
+        { name: "Forklift", model: "FL-3T", capacity: "3 Ton", description: "Light duty" },
+        { name: "Mobile Crane", model: "MC-20T", capacity: "20 Ton", description: "Truck mounted crane" }
       ]
     }
   ];
 
   return (
-    <div className="pageContainer">
-      <table cellpadding="0" border="0" cellspacing="0" width="100%">
-        <tbody>
-          <tr>
-            <td>
-              <span className="PageHeader">Our Equipments</span>
-            </td>
-          </tr>
-          <tr>
-            <td align="center">
-              <img 
-                src="/images/Common/Equpmntbnr.png" 
-                alt="Equipments" 
-                title="Equipments"
-                style={{ maxWidth: '100%', height: 'auto' }}
-              />
-            </td>
-          </tr>
-          <tr>
-            <td style={{ height: '20px' }}></td>
-          </tr>
-          <tr>
-            <td>
-              {equipmentCategories.map((category, catIndex) => (
-                <div key={catIndex} style={{ marginBottom: '20px' }}>
+    <div>
+      {/* Page Header */}
+      <div className="page-header">
+        <div className="container">
+          <h1>Our Equipment</h1>
+          <p>State-of-the-art fabrication machinery and facilities</p>
+        </div>
+      </div>
+
+      {/* Equipment Section */}
+      <section className="section">
+        <div className="container">
+          {/* View Toggle */}
+          <div className="text-center mb-40">
+            <div style={{ display: 'inline-flex', gap: '10px' }}>
+              <button 
+                className={`btn ${viewMode === 'table' ? 'btn-primary' : 'btn-outline'}`}
+                onClick={() => setViewMode('table')}
+              >
+                Table View
+              </button>
+              <button 
+                className={`btn ${viewMode === 'card' ? 'btn-primary' : 'btn-outline'}`}
+                onClick={() => setViewMode('card')}
+              >
+                Card View
+              </button>
+            </div>
+          </div>
+
+          {/* Table View */}
+          {viewMode === 'table' && (
+            <div>
+              {equipmentData.map((category, catIndex) => (
+                <div key={catIndex} style={{ marginBottom: '40px' }}>
                   <h3 style={{ 
-                    backgroundColor: '#777', 
+                    backgroundColor: '#2b2b2b', 
                     color: '#fff', 
-                    padding: '7px 0 7px 20px',
-                    margin: '0'
+                    padding: '15px 20px',
+                    margin: '0 0 20px 0'
                   }}>
-                    {category.title}
+                    {category.category}
                   </h3>
-                  <table className="tablestr" cellPadding="0" cellSpacing="0">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Equipment Name</th>
+                        <th>Model</th>
+                        <th>Capacity</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
                     <tbody>
                       {category.items.map((item, itemIndex) => (
                         <tr key={itemIndex}>
-                          <td>{item}</td>
+                          <td><strong>{item.name}</strong></td>
+                          <td>{item.model}</td>
+                          <td>{item.capacity}</td>
+                          <td>{item.description}</td>
                         </tr>
                       ))}
                     </tbody>
                   </table>
                 </div>
               ))}
-            </td>
-          </tr>
-        </tbody>
-      </table>
+            </div>
+          )}
+
+          {/* Card View */}
+          {viewMode === 'card' && (
+            <div className="equipment-grid">
+              {equipmentData.map((category, catIndex) => (
+                category.items.map((item, itemIndex) => (
+                  <div key={`${catIndex}-${itemIndex}`} className="equipment-card">
+                    <div className="equipment-image">
+                      <img 
+                        src={`/images/MS/${item.name.split(' ')[0]}.jpg`} 
+                        alt={item.name}
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                          e.target.nextSibling.style.display = 'flex';
+                        }}
+                      />
+                      <div className="image-placeholder" style={{ display: 'none' }}>
+                        <span>Image Coming Soon</span>
+                      </div>
+                    </div>
+                    <div className="equipment-info">
+                      <h3>{item.name}</h3>
+                      <p><strong>Model:</strong> {item.model}</p>
+                      <p><strong>Capacity:</strong> {item.capacity}</p>
+                      <p>{item.description}</p>
+                    </div>
+                  </div>
+                ))
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Summary Stats */}
+      <section className="section bg-light">
+        <div className="container">
+          <div className="text-center mb-40">
+            <h2>Equipment Summary</h2>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Number of Units</th>
+                <th>Key Equipment</th>
+              </tr>
+            </thead>
+            <tbody>
+              {equipmentData.map((category, index) => (
+                <tr key={index}>
+                  <td><strong>{category.category}</strong></td>
+                  <td>{category.items.length} Units</td>
+                  <td>{category.items.slice(0, 2).map(i => i.name).join(', ')}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
     </div>
   );
 };

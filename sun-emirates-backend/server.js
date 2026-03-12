@@ -6,49 +6,68 @@ require("dotenv").config();
 
 const app = express();
 
-/* Middleware */
+/* ---------------- MIDDLEWARE ---------------- */
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-/* MongoDB Connection */
+/* ---------------- MONGODB CONNECTION ---------------- */
 
 const MONGODB_URI =
-process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/sunemirates";
+  process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/sunemirates";
 
 mongoose
-.connect(MONGODB_URI)
-.then(() => console.log("MongoDB Connected"))
-.catch((err) => console.error("MongoDB connection error:", err));
+  .connect(MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("✅ MongoDB Connected");
+  })
+  .catch((err) => {
+    console.error("❌ MongoDB Connection Error:", err.message);
+  });
 
-/* Routes */
+/* ---------------- ROUTES ---------------- */
 
+// Contact Routes
 const contactRoutes = require("./routes/contact");
-
 app.use("/api/contact", contactRoutes);
 
-/* Serve React */
+// Equipment Routes
+const equipmentRoutes = require("./routes/equipment");
+app.use("/api/equipment", equipmentRoutes);
+
+// Gallery Routes
+const galleryRoutes = require("./routes/gallery");
+app.use("/api/gallery", galleryRoutes);
+
+// Client Routes
+const clientRoutes = require("./routes/clients");
+app.use("/api/clients", clientRoutes);
+
+/* ---------------- STATIC FRONTEND ---------------- */
 
 app.use(express.static(path.join(__dirname, "../sun-emirates-frontend/build")));
 
 app.get("*", (req, res) => {
-res.sendFile(
-path.join(__dirname, "../sun-emirates-frontend/build/index.html")
-);
+  res.sendFile(
+    path.join(__dirname, "../sun-emirates-frontend/build/index.html")
+  );
 });
 
-/* Error Handler */
+/* ---------------- ERROR HANDLER ---------------- */
 
 app.use((err, req, res, next) => {
-console.error(err.stack);
-res.status(500).json({ message: "Server Error" });
+  console.error("Server Error:", err.stack);
+  res.status(500).json({ message: "Internal Server Error" });
 });
 
-/* Start Server */
+/* ---------------- SERVER START ---------------- */
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 app.listen(PORT, () => {
-console.log(`Server running on port ${PORT}`);
+  console.log(`🚀 Server running on port ${PORT}`);
 });

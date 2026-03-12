@@ -10,20 +10,25 @@ import Services from "./pages/Services";
 import Clients from "./pages/Clients";
 import Equipments from "./pages/Equipments";
 import ContactUs from "./pages/ContactUs";
+import Gallery from "./pages/Gallery";
 
-
+// Additional pages
 import Feedback from "./pages/Feedback";
 import Sitemap from "./pages/Sitemap";
 import LocationMap from "./pages/LocationMap";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Disclaimer from "./pages/Disclaimer";
 
+// Product detail pages
 import StainlessSteel from "./pages/StainlessSteel";
 import MildSteel from "./pages/MildSteel";
 import MachineShop from "./pages/MachineShop";
 import PreFabrication from "./pages/PreFabrication";
 import SurfaceTreatment from "./pages/SurfaceTreatment";
 import FinishingActivities from "./pages/FinishingActivities";
+
+// Admin
+import AdminDashboard from "./pages/admin/AdminDashboard";
 
 import PageNotFound from "./pages/PageNotFound";
 
@@ -41,6 +46,7 @@ function App() {
         <Route path="services" element={<Services />} />
         <Route path="clients" element={<Clients />} />
         <Route path="equipments" element={<Equipments />} />
+        <Route path="gallery" element={<Gallery />} />
         <Route path="contact" element={<ContactUs />} />
 
         {/* Extra Pages */}
@@ -62,6 +68,9 @@ function App() {
         <Route path="*" element={<PageNotFound />} />
 
       </Route>
+
+      {/* Admin Routes (without main layout) */}
+      <Route path="/admin" element={<AdminDashboard />} />
 
     </Routes>
   );

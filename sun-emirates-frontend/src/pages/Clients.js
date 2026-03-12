@@ -1,132 +1,139 @@
-import React from "react";
-
-/* CLIENT LOGOS */
-import client1 from "../images/Clients/Clients1.png";
-import client2 from "../images/Clients/Clients2.png";
-import client3 from "../images/Clients/Clients3.png";
-import client4 from "../images/Clients/Clients4.png";
-import client5 from "../images/Clients/Clients5.png";
-import client6 from "../images/Clients/Clients6.png";
-import client7 from "../images/Clients/Clients7.png";
-import client8 from "../images/Clients/Clients8.png";
-import client9 from "../images/Clients/Clients9.png";
-import client10 from "../images/Clients/Clients10.png";
-import client11 from "../images/Clients/Clients11.png";
-import client12 from "../images/Clients/Clients12.png";
-import client13 from "../images/Clients/Clients13.png";
-
-/* PROJECT IMAGES */
-import project1 from "../images/Clients/project1.jpeg";
-import project2 from "../images/Clients/project2.jpeg";
-import project3 from "../images/Clients/project3.jpeg";
-import project4 from "../images/Clients/project4.jpeg";
-import project5 from "../images/Clients/project5.jpeg";
-import project6 from "../images/Clients/project6.jpeg";
-
-/* BANNER IMAGE */
-import banner from "../images/Clients/ourclientsbg.png";
+import React from 'react';
 
 const Clients = () => {
-
   const clients = [
-    { name: "KHANSAHEB", logo: client1 },
-    { name: "AL Basti & Muktha LLC", logo: client2 },
-    { name: "ThyssenKrupp", logo: client3 },
-    { name: "MEGARME", logo: client4 },
-    { name: "New Trade Links LLC", logo: client5 },
-    { name: "Ferrotech International Fze", logo: client6 },
-    { name: "Al Ghandi Electronics", logo: client7 },
-    { name: "Hi-Tec", logo: client8 },
-    { name: "Somec-Sharaf", logo: client9 },
-    { name: "STADLERS", logo: client10 },
-    { name: "AL REYAMI", logo: client11 },
-    { name: "Dutco Balfour Beatty LLC", logo: client12 },
-    { name: "AL REYAMI INTERIORS", logo: client13 }
+    { src: "/images/Clients/Clients1.png", alt: "KHANSAHEB", category: "Construction" },
+    { src: "/images/Clients/Clients2.png", alt: "AL Basti & Muktha LLC", category: "Construction" },
+    { src: "/images/Clients/Clients3.png", alt: "ThyssenKrupp", category: "Engineering" },
+    { src: "/images/Clients/Clients4.png", alt: "MEGARME", category: "Marine" },
+    { src: "/images/Clients/Clients5.png", alt: "New Trade Links LLC", category: "Trading" },
+    { src: "/images/Clients/Clients6.png", alt: "Ferrotech International Fze", category: "Industrial" },
+    { src: "/images/Clients/Clients7.png", alt: "Al Ghandi Electronics", category: "Electronics" },
+    { src: "/images/Clients/Clients8.png", alt: "Hi-Tec", category: "Technology" },
+    { src: "/images/Clients/Clients9.png", alt: "Somec-Sharaf", category: "Construction" },
+    { src: "/images/Clients/Clients10.png", alt: "STADLERS", category: "Railway" },
+    { src: "/images/Clients/Clients11.png", alt: "AL REYAMI", category: "Construction" },
+    { src: "/images/Clients/Clients12.png", alt: "Dutco Balfour Beatty LLC", category: "Construction" },
+    { src: "/images/Clients/Clients13.png", alt: "AL REYAMI INTERIORS", category: "Interior" }
   ];
 
-  const projects = [
-    project1,
-    project2,
-    project3,
-    project4,
-    project5,
-    project6
+  const clientCategories = [
+    { name: "Construction", count: 5 },
+    { name: "Engineering", count: 1 },
+    { name: "Marine", count: 1 },
+    { name: "Industrial", count: 1 },
+    { name: "Trading", count: 1 },
+    { name: "Technology", count: 1 },
+    { name: "Railway", count: 1 },
+    { name: "Interior", count: 1 },
+    { name: "Electronics", count: 1 }
   ];
 
   return (
-    <div className="pageContainer">
-
+    <div>
       {/* Page Header */}
-      <h2 className="PageHeader">Our Clients</h2>
-
-      {/* Banner */}
-      <div style={{ textAlign: "center" }}>
-        <img
-          src={banner}
-          alt="Clients Banner"
-          style={{ maxWidth: "100%" }}
-        />
+      <div className="page-header">
+        <div className="container">
+          <h1>Our Clients</h1>
+          <p>Trusted by leading companies across the UAE</p>
+        </div>
       </div>
 
-      {/* Clients Table */}
-      <table
-        className="ClientGridView"
-        cellPadding="10"
-        cellSpacing="0"
-        border="1"
-        width="100%"
-        style={{ marginTop: "20px" }}
-      >
-        <thead>
-          <tr>
-            <th>Client Name</th>
-            <th>Logo</th>
-          </tr>
-        </thead>
+      {/* Client Logos */}
+      <section className="section">
+        <div className="container">
+          <div className="text-center mb-40">
+            <h2>Our Valued Clients</h2>
+            <p className="text-light">
+              We are proud to have served a diverse range of clients across various industries
+            </p>
+          </div>
 
-        <tbody>
-          {clients.map((client, index) => (
-            <tr key={index}>
-              <td>{client.name}</td>
-              <td>
-                <img
-                  src={client.logo}
-                  alt={client.name}
-                  style={{ width: "120px" }}
+          <div className="clients-grid">
+            {clients.map((client, index) => (
+              <div key={index} className="client-logo">
+                <img 
+                  src={client.src} 
+                  alt={client.alt}
+                  title={client.alt}
+                  loading="lazy"
                 />
-              </td>
-            </tr>
-          ))}
-        </tbody>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      </table>
+      {/* Client Categories */}
+      <section className="section bg-light">
+        <div className="container">
+          <div className="text-center mb-40">
+            <h2>Industries We Serve</h2>
+          </div>
+          <div className="services-grid">
+            {clientCategories.map((category, index) => (
+              <div key={index} className="service-card">
+                <div className="service-card-icon">🏢</div>
+                <h3>{category.name}</h3>
+                <p>{category.count} Client{category.count > 1 ? 's' : ''}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      {/* Project Photos Section */}
-      <h2 style={{ marginTop: "40px" }}>Our Projects</h2>
-
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(3,1fr)",
-          gap: "20px",
-          marginTop: "20px"
-        }}
-      >
-        {projects.map((img, index) => (
-          <img
-            key={index}
-            src={img}
-            alt="project"
-            style={{
-              width: "100%",
-              height: "200px",
-              objectFit: "cover",
-              borderRadius: "5px"
-            }}
-          />
-        ))}
-      </div>
-
+      {/* Testimonials / Why Choose Us */}
+      <section className="section">
+        <div className="container">
+          <div className="text-center mb-40">
+            <h2>Why Clients Choose Us</h2>
+          </div>
+          <div className="services-grid">
+            <div className="service-card">
+              <h3>Quality Assurance</h3>
+              <p>
+                ISO 9001:2015 certified company with rigorous quality control 
+                processes ensuring consistent excellence in every project.
+              </p>
+            </div>
+            <div className="service-card">
+              <h3>Technical Expertise</h3>
+              <p>
+                Over 15 years of combined experience in steel fabrication with 
+                skilled engineers and certified welders.
+              </p>
+            </div>
+            <div className="service-card">
+              <h3>On-Time Delivery</h3>
+              <p>
+                Commitment to project timelines with efficient production 
+                planning and execution capabilities.
+              </p>
+            </div>
+            <div className="service-card">
+              <h3>Competitive Pricing</h3>
+              <p>
+                Cost-effective solutions without compromising on quality, 
+                providing excellent value for investment.
+              </p>
+            </div>
+            <div className="service-card">
+              <h3>Safety Standards</h3>
+              <p>
+                Strict adherence to safety regulations with regular training 
+                and compliance audits.
+              </p>
+            </div>
+            <div className="service-card">
+              <h3>Customer Support</h3>
+              <p>
+                Dedicated project management and communication for seamless 
+                coordination throughout the project lifecycle.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

@@ -1,214 +1,254 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import SpecialistAreas from "../components/SpecialistAreas";
+import React from 'react';
 
 const AboutUs = () => {
-  const [activeSection, setActiveSection] = useState(-1);
-
-  const sections = [
+  const teamMembers = [
     {
-      title: "Company Information",
-      content: (
-        <table cellPadding="0" cellSpacing="0" border="0" width="99%" className="tablestr">
-          <tbody>
-            <tr>
-              <td className="abtLabel">Year of Establishment</td>
-              <td className="abtLabel">2007</td>
-            </tr>
-            <tr>
-              <td className="abtLabel">Sponsor</td>
-              <td className="abtLabel">Mr. Abdulla Omar Al Saeidi</td>
-            </tr>
-            <tr>
-              <td className="abtLabel">Manager (Sales & Operations)</td>
-              <td className="abtLabel">Mr. Saminathan B.E.</td>
-            </tr>
-            <tr>
-              <td className="abtLabel">Manager (Accounts)</td>
-              <td className="abtLabel">Mrs. Tahseen Syed Khaleemulla B.A</td>
-            </tr>
-          </tbody>
-        </table>
-      )
+      name: "Saminathan",
+      position: "Managing Director",
+      image: null
     },
     {
-      title: "Company Location Information",
-      content: (
-        <table cellPadding="0" cellSpacing="0" border="0" width="99%" className="tablestr">
-          <tbody>
-            <tr>
-              <td className="abtLabel">Total Area</td>
-              <td className="abtLabel">16000 Sq. feet</td>
-            </tr>
-            <tr>
-              <td className="abtLabel">Workshop - Open Area</td>
-              <td className="abtLabel">6000 Sq. feet</td>
-            </tr>
-            <tr>
-              <td className="abtLabel">Workshop - Covered Area</td>
-              <td className="abtLabel">10000 Sq. feet</td>
-            </tr>
-          </tbody>
-        </table>
-      )
+      name: "Ramesh Kumar",
+      position: "Production Manager",
+      image: null
     },
     {
-      title: "Company Employees Information",
-      content: (
-        <table cellPadding="0" cellSpacing="0" border="0" width="99%" className="tablestr">
-          <tbody>
-            <tr>
-              <th className="abtLabel">Number of Employees</th>
-              <th className="abtLabel">36 + 40 (Sub Contracting)</th>
-            </tr>
-            <tr>
-              <td className="abtLabel">Mechanical Engineer</td>
-              <td className="abtLabel">01</td>
-            </tr>
-            <tr>
-              <td className="abtLabel">Operation Incharge</td>
-              <td className="abtLabel">02</td>
-            </tr>
-            <tr>
-              <td className="abtLabel">Accountant</td>
-              <td className="abtLabel">01</td>
-            </tr>
-            <tr>
-              <td className="abtLabel">Senior Foreman</td>
-              <td className="abtLabel">02</td>
-            </tr>
-            <tr>
-              <td className="abtLabel">Fabricators (Fitter)</td>
-              <td className="abtLabel">07</td>
-            </tr>
-            <tr>
-              <td className="abtLabel">Welders (Blaster & Painter)</td>
-              <td className="abtLabel">04</td>
-            </tr>
-            <tr>
-              <td className="abtLabel">SS Finishing Technicians</td>
-              <td className="abtLabel">04</td>
-            </tr>
-            <tr>
-              <td className="abtLabel">Machine Operators</td>
-              <td className="abtLabel">02</td>
-            </tr>
-            <tr>
-              <td className="abtLabel">Drivers</td>
-              <td className="abtLabel">03</td>
-            </tr>
-            <tr>
-              <td className="abtLabel">Technical Helpers</td>
-              <td className="abtLabel">10</td>
-            </tr>
-          </tbody>
-        </table>
-      )
+      name: "Ahmed Hassan",
+      position: "Quality Assurance Manager",
+      image: null
+    },
+    {
+      name: "Mohammed Ali",
+      position: "Operations Manager",
+      image: null
     }
   ];
 
-  const toggleSection = (index) => {
-    setActiveSection(activeSection === index ? -1 : index);
-  };
+  const capabilities = [
+    "Structural Steel Fabrication",
+    "Stainless Steel Fabrication",
+    "Mild Steel Fabrication",
+    "Pipe Fabrication & Piping Systems",
+    "Custom Metal Works",
+    "Welding (MIG, TIG, ARC, SAW)",
+    "Surface Treatment & Coating",
+    "Precision Machining",
+    "Installation & Erection"
+  ];
 
   return (
-    <table cellPadding="0" border="0" cellSpacing="0" width="100%">
-      <tbody>
-        <tr>
-          <td width="70%">
-            <table cellPadding="0" border="0" cellSpacing="0" width="100%">
-              <tbody>
-                <tr>
-                  <td align="center">
-                    <div className="PageHeader">About Us</div>
+    <div>
+      {/* Page Header */}
+      <div className="page-header">
+        <div className="container">
+          <h1>About Us</h1>
+          <p>Professional Steel Fabrication Since 2007</p>
+        </div>
+      </div>
 
-                    <table cellPadding="0" cellSpacing="0" width="100%">
-                      <tbody>
-                        <tr>
-                          <td align="center" colSpan="2">
-                            <img
-                              src="/images/Common/Aboutsbnr.png"
-                              alt="About Us"
-                              title="About Us"
-                              style={{ maxWidth: "100%" }}
-                            />
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+      {/* Company Profile */}
+      <section className="section">
+        <div className="container">
+          <div className="about-section">
+            <div className="about-content">
+              <h2>Company Profile</h2>
+              <p>
+                Sun Emirates Mechanical Works LLC is a leading steel fabrication 
+                company established in 2007 in Al Shenaya New Industrial Area, 
+                Ajman, United Arab Emirates. With over 15 years of experience, 
+                we have built a reputation for delivering high-quality fabrication 
+                solutions to clients across various sectors.
+              </p>
+              <p>
+                Our company specializes in stainless steel and mild steel fabrication 
+                for Construction, Interior Decoration, Marine, Power, and Oil & Gas 
+                sectors. We maintain the highest standards of quality and safety in 
+                all our operations.
+              </p>
+              <p>
+                We have a team of experienced engineers, technicians, and skilled 
+                workers who are committed to delivering projects on time while 
+                maintaining exceptional quality standards.
+              </p>
+            </div>
+            <div className="about-image">
+              <img 
+                src="/images/Common/Aboutsbnr.png" 
+                alt="Sun Emirates Workshop Facility" 
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
-                    <div className="abtContentsView">
-                      <p className="abtparp">
-                        We are pleased to introduce ourselves as{" "}
-                        <b>SUN EMIRATES MECHANICAL WORKS LLC</b>, expertise in
-                        Steel structural designers and contractors and one of
-                        the growing steel fabrication company located in Al
-                        Shenaya New Industrial area, Ajman, U.A.E established in
-                        2007.
-                      </p>
+      {/* Vision & Mission */}
+      <section className="section bg-light">
+        <div className="container">
+          <div className="text-center mb-40">
+            <h2>Vision & Mission</h2>
+          </div>
+          <div className="services-grid">
+            <div className="service-card">
+              <div className="service-card-icon">👁</div>
+              <h3>Our Vision</h3>
+              <p>
+                To be the preferred steel fabrication partner for EPC consultants 
+                and industrial clients in the Gulf region, recognized for technical 
+                excellence, quality craftsmanship, and reliable service.
+              </p>
+            </div>
+            <div className="service-card">
+              <div className="service-card-icon">🎯</div>
+              <h3>Our Mission</h3>
+              <p>
+                To deliver high-quality steel fabrication solutions that meet 
+                international standards, while building long-term relationships 
+                with our clients through professionalism, integrity, and technical 
+                expertise.
+              </p>
+            </div>
+            <div className="service-card">
+              <div className="service-card-icon">⚙</div>
+              <h3>Our Values</h3>
+              <p>
+                Quality first, safety always, technical excellence, customer 
+                satisfaction, and continuous improvement are the core values 
+                that guide our operations and business decisions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                      <p className="abtparp">
-                        As a multi-faceted establishment, we are continually
-                        growing, diversifying into new product areas, improving
-                        existing ones with best quality and on-time delivery.
-                      </p>
+      {/* Workshop Facility */}
+      <section className="section">
+        <div className="container">
+          <div className="text-center mb-40">
+            <h2>Workshop Facility</h2>
+            <p className="text-light">
+              State-of-the-art manufacturing facility in Ajman, UAE
+            </p>
+          </div>
+          <div className="about-section">
+            <div className="about-image">
+              <img 
+                src="/images/MS/IndustrialSheds.jpg" 
+                alt="Workshop Facility" 
+              />
+            </div>
+            <div className="about-content">
+              <h3>Manufacturing Capabilities</h3>
+              <p>
+                Our modern workshop facility is equipped with advanced fabrication 
+                machinery and equipment to handle projects of various scales and 
+                complexities. We maintain a well-organized production floor with 
+                proper material handling systems and quality control checkpoints.
+              </p>
+              <ul className="features-list">
+                <li>Covered workshop area: 15,000+ sq meters</li>
+                <li>EOT Cranes: 10-ton capacity</li>
+                <li>Advanced welding equipment</li>
+                <li>Surface treatment facilities</li>
+                <li>Quality testing laboratory</li>
+                <li>Material storage and handling</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                      <p className="abtparp">
-                        You are important to us, we therefore feel the need to
-                        register our company in your esteemed organization and
-                        kindly send us your valuable enquiries.
-                      </p>
+      {/* Engineering Capability */}
+      <section className="section bg-dark">
+        <div className="container">
+          <div className="text-center mb-40">
+            <h2>Engineering Capability</h2>
+          </div>
+          <div className="about-section">
+            <div className="about-content">
+              <h3>Technical Expertise</h3>
+              <p>
+                Our engineering team possesses extensive experience in steel 
+                fabrication and structural works. We have the capability to 
+                interpret complex engineering drawings and convert them into 
+                precision fabricated components.
+              </p>
+              <ul className="features-list">
+                {capabilities.map((capability, index) => (
+                  <li key={index}>{capability}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="about-image">
+              <img 
+                src="/images/MS/MachineBody.jpg" 
+                alt="Engineering Works" 
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
-                      <p className="abtparp">
-                        Assuring our best attention, services and healthy
-                        business relation at all times.
-                      </p>
-
-                      <p className="abtparp">
-                        Awaiting to receive your valued enquiries.
-                        <Link to="/feedback"> Post your valuable queries</Link>
-                      </p>
-
-                      <p className="abtparp">
-                        We have experienced technical team who expertise on
-                        producing ranges of products in time with best quality.
-                      </p>
-
-                      <br />
+      {/* Management Team */}
+      <section className="section">
+        <div className="container">
+          <div className="text-center mb-40">
+            <h2>Management Team</h2>
+            <p className="text-light">
+              Experienced leadership guiding our success
+            </p>
+          </div>
+          <div className="team-grid">
+            {teamMembers.map((member, index) => (
+              <div key={index} className="team-member">
+                <div className="team-member-image">
+                  {member.image ? (
+                    <img src={member.image} alt={member.name} />
+                  ) : (
+                    <div className="image-placeholder">
+                      <span>Image Coming Soon</span>
                     </div>
+                  )}
+                </div>
+                <h4>{member.name}</h4>
+                <p>{member.position}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-                    <div className="accordinAbtUs">
-                      {sections.map((section, index) => (
-                        <div key={index}>
-                          <h3
-                            onClick={() => toggleSection(index)}
-                            style={{ cursor: "pointer" }}
-                          >
-                            {section.title}
-                          </h3>
-
-                          {activeSection === index && (
-                            <div>{section.content}</div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-
-          <td width="30%" valign="top" className="osa">
-            <SpecialistAreas />
-          </td>
-        </tr>
-
-        <tr>
-          <td style={{ height: "25px" }}>&nbsp;</td>
-        </tr>
-      </tbody>
-    </table>
+      {/* Certifications & Standards */}
+      <section className="section bg-light">
+        <div className="container">
+          <div className="text-center mb-40">
+            <h2>Quality & Standards</h2>
+          </div>
+          <div className="services-grid">
+            <div className="service-card">
+              <h3>ISO 9001:2015</h3>
+              <p>
+                Quality Management System certified company ensuring consistent 
+                quality in all our fabrication processes and deliverables.
+              </p>
+            </div>
+            <div className="service-card">
+              <h3>Safety Standards</h3>
+              <p>
+                Strict adherence to OSHA and local safety regulations with 
+                regular safety audits and training programs for all staff.
+              </p>
+            </div>
+            <div className="service-card">
+              <h3>Welding Certifications</h3>
+              <p>
+                Certified welders following AWS and ASME standards for 
+                quality welded joints and structural integrity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 };
 
